@@ -1,0 +1,27 @@
+# Local measurement data
+/data/
+/261113/
+/local_notes/
+**/*_c[0-9]*.ain
+**/*_c[0-9]*.bin
+**/*_c[0-9]*.bmp
+**/*_c[0-9]*.cfg
+**/*_c[0-9]*.cos
+**/*_c[0-9]*.lbv
+**/*_c[0-9]*.sin
+
+# Generated from measurement data; regenerate locally
+/prototype/data.js
+/prototype/verification.json
+/prototype/*_preview.png
+
+# Local Python environment and cache
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local credentials
+.env
+.env.*
+!.env.example
