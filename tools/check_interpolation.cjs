@@ -56,9 +56,9 @@ function viewer(fixture) {
     sandbox.MIRA_DATA=fixture.meta;
     sandbox.MIRA_BASE64=Buffer.from(fixture.values).toString("base64");
   } else {
-    vm.runInContext(fs.readFileSync(path.join(root,"prototype/data.js"),"utf8"),sandbox);
+    vm.runInContext(fs.readFileSync(path.join(root,"archive/prototype/data.js"),"utf8"),sandbox);
   }
-  vm.runInContext(fs.readFileSync(path.join(root,"prototype/viewer.js"),"utf8"),sandbox);
+  vm.runInContext(fs.readFileSync(path.join(root,"archive/prototype/viewer.js"),"utf8"),sandbox);
   assert.equal(errors.length,0,errors.join("\n"));
   return {element,uniforms,staticUploads,frames,textureUploads,errors,meta:sandbox.MIRA_DATA,
     projection:()=>element("offscreen-1").context.image,

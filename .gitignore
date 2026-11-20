@@ -11,9 +11,11 @@
 **/*_c[0-9]*.sin
 
 # Generated from measurement data; regenerate locally
-/prototype/data.js
-/prototype/verification.json
-/prototype/*_preview.png
+/archive/prototype/data.js
+/archive/prototype/verification.json
+/archive/prototype/*_preview.png
+/archive/basic/data.js
+/archive/basic/verification.json
 
 # Local Python environment and cache
 __pycache__/

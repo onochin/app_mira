@@ -20,7 +20,7 @@ def main():
     cfg = read_cfg(source / "W10_A-B_MI_vW9_c1.cfg")
     width, height = int(cfg[11]), int(cfg[12])
     # Read the generated color table without executing the JS payload.
-    line = (ROOT / "prototype/data.js").read_text(encoding="utf-8").splitlines()[1]
+    line = (ROOT / "archive/prototype/data.js").read_text(encoding="utf-8").splitlines()[1]
     meta = json.loads(line.removeprefix("window.MIRA_DATA = ").removesuffix(";"))
     palette = meta["palette"]
     scans = [read_values(source / f"{name}.bin", width, height) for name in meta["names"]]
@@ -101,7 +101,7 @@ def main():
         draw.text((80+(d/100+.5)/45*1320,819),str(d),font=small,fill="#536875",anchor="mt")
     draw.text((30, 856), "配置の仮置き：c1→c45が測定順・中心高さは一定・元画面X＋を上向き。", font=small, fill="#536875")
     draw.text((30, 881), "保存済み表示強度の可視化です。絶対振幅の校正、反射原因・欠陥形状の判定はしていません。", font=small, fill="#536875")
-    destination=ROOT / "prototype/3D_preview.png"
+    destination=ROOT / "archive/prototype/3D_preview.png"
     output.save(destination)
     print(f"Rendered {len(scans)} measured planes to {destination}")
 

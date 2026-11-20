@@ -116,7 +116,7 @@ def build(input_dir, step_mm):
             "heightMinMm": h_min, "heightSpanMm": h_span, "depthMm": depth,
             "names": [p.stem for p in files], "numbers": numbers,
             "palette": palette}
-    output = ROOT / "prototype"
+    output = ROOT / "archive" / "prototype"
     output.mkdir(exist_ok=True)
     encoded = base64.b64encode(b"".join(scans)).decode("ascii")
     (output / "data.js").write_text(
@@ -138,7 +138,7 @@ def build(input_dir, step_mm):
               "files": verification}
     (output / "verification.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Built {len(files)} scans, {width} x {height}; {report['total_pixels_compared']:,} BMP pixels matched; 0 mismatches.")
-    print(f"Viewer: {ROOT / 'MIRA_3D試作.html'}")
+    print(f"Archived viewer: {ROOT / 'archive' / 'MIRA_3D試作.html'}")
 
 
 if __name__ == "__main__":
